@@ -25,8 +25,15 @@ class ObjectDetectionSystem:
     
     def __init__(self):
         if not self.initialized:
-            self.yolo_model = YOLO('yolov8n.pt')
+            # Initialize YOLO model only when needed
             self.initialized = True
+            self._yolo_model = None
+
+    @property
+    def yolo_model(self):
+        if self._yolo_model is None:
+            self._yolo_model = YOLO('yolov8n.pt')
+        return self._yolo_model
     
     def detect_objects(self, image_base64: str, confidence_threshold: float = 0.5):
         try:
