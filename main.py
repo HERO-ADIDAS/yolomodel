@@ -28,7 +28,7 @@ class ObjectDetectionSystem:
             confidence_threshold (float): Minimum confidence for detections
             
         Returns:
-            str: Output image as base64 string with detected objects
+            str: Output image as base64 string with detected objects pk
         """
         try:
             # Decode base64 to image
