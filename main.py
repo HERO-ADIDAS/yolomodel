@@ -32,7 +32,7 @@ class ObjectDetectionSystem:
     @property
     def yolo_model(self):
         if self._yolo_model is None:
-            self._yolo_model = YOLO('yolov8n.pt')
+            self._yolo_model = YOLO('yolov8m.pt')
         return self._yolo_model
     
     def detect_objects(self, image_base64: str, confidence_threshold: float = 0.5):
