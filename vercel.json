@@ -2,18 +2,14 @@
     "version": 2,
     "builds": [
         {
-            "src": "api/detect.py",
+            "src": "main.py",
             "use": "@vercel/python"
         }
     ],
     "routes": [
         {
-            "src": "/api/detect",
-            "dest": "api/detect.py"
-        },
-        {
-            "src": "/api/health",
-            "dest": "api/detect.py"
+            "src": "/(.*)",
+            "dest": "main.py"
         }
     ]
 }
